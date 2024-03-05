@@ -20,7 +20,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w6z+j0vri*tmdr-8ze_$j5n)!3x41lq_fy_#n+9!@e7csmku)y'
+SECRET_KEY = (
+    'django-insecure-w6z+j0vri*tmdr-8ze_$j5n)!3x41lq_fy_#n+9!@e7csmku)y'
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -33,7 +35,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'main_page',
     'reservation',
-    'users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -78,15 +79,10 @@ WSGI_APPLICATION = 'parkovka3.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'parkovki_mesta',
-        'USER': 'test_user_parkovki',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
