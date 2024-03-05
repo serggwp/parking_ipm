@@ -3,31 +3,39 @@
 
 
 {%block title%} Страница с картой {%endblock%}
+{%block content%}
+<h1>Парковки</h1>
+<h3>Войти/зарегестрироваться</h3>
 
-{%block content_one%}
-    <h1>Парковки</h1>
-    <h3>Войти/зарегестрироваться</h3>
-    <div>
-        <a href="#parking_one"><img src="{% static 'main_page/img/marker_icon.png' %}" class="marker_icon"></a>
-        <a href="#parking_two"><img src="{% static 'main_page/img/marker_icon.png' %}" class="marker_icon_2"></a>
-    </div>
-{%endblock%}
-
-{%block content_two%}
+<!-- карта -->
+<div class='map'>
+    <a href="#parking_one"><img src="{% static 'main_page/img/marker_icon.png' %}" class="marker_icon"></a>
+    <a href="#parking_two"><img src="{% static 'main_page/img/marker_icon.png' %}" class="marker_icon_2"></a>
     <img src="{% static 'main_page/img/Location.png' %}">
+</div>
+
+
+<!-- cписок парковок -->
+<div class='parkings'>
     <h2>Список доступных парковок</h2>
     <ul>
-        <div class = "parking_one">
-            <li id = 'parking_one'><h3>Первая парковка</h3></li>
+        <div class="parking_one">
+            <li id='parking_one'>
+                <h3>Первая парковка</h3>
+            </li>
             <p>Свободных мест: </p>
             <p>Адрес, расположение:<br> Всего свободных мест:</p>
             <a>Забронировать место (сделать неактивным, если нет свободных мест)</a>
         </div>
-        <div class = "parking_two">
-            <li id = 'parking_two'><h3>Вторая парковка</h3></li>
+        <div class="parking_two">
+            <li id='parking_two'>
+                <h3>Вторая парковка</h3>
+            </li>
             <p>Свободных мест: </p>
             <p>Адрес, расположение:<br> Всего свободных мест:</p>
-            <a href = '{%url "reserv"%}'>Забронировать место (сделать неактивным, если нет свободных мест)</a>
+            <a href='{%url "reserv"%}'>Забронировать место (сделать неактивным, если нет свободных мест)</a>
         </div>
     </ul>
+</div>
+
 {%endblock%}

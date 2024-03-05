@@ -1,19 +1,20 @@
 {% load static %}
-
+<!-- общая html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{%block title%}{%endblock%}</title>
-    <link rel = 'stylesheet' href = "{% static 'main_page/css/main_css.css' %}">
+    <link rel='stylesheet' href="{% static 'main_page/css/main_css.css' %}">
 </head>
+
 <body>
     <main>
-        {%block content_one%}
-        {%endblock%}
-        {%block content_two%}
+        {%block content%}
         {%endblock%}
     </main>
 </body>
+
 </html>
