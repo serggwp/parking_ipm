@@ -1,0 +1,16 @@
+
+.marker_icon {
+        position: absolute;
+        top: 100px;
+        left: 200px;
+        width: 100px;
+        height: 100px;
+      }
+
+.marker_icon_2{
+        position: absolute;
+        top: 500px;
+        left: 600px;
+        width: 100px;
+        height: 100px;
+      }

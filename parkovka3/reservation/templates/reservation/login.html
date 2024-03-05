@@ -1,0 +1,17 @@
+{%extends 'reservation/reserv_main.html'%}
+
+{% block title%} Бронь места {%endblock%}
+
+{%block content%}
+<div class = 'features'>
+    <form method = 'post'>
+        {%csrf_token%}
+        {{ form.user }} <br>
+        <p>Забронировать место? {{ form.status }}</p>
+        <p> Место: {{article.mesto}} <p> <br>
+        <button type = 'submit'> Подтвердить </button>
+    </form>
+
+</div>
+
+{%endblock%}

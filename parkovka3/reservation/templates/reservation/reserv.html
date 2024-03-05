@@ -1,0 +1,16 @@
+{%extends 'reservation/reserv_main.html'%}
+
+{%block title%} Бронь мест {%endblock%}
+
+{%block content%}
+    <div class = "features">
+        <h1>Забронировать место: </h1>
+        {%for el in mesta_status%}
+                {%if el.status == False%}
+               <a href = '{%url "registr" el.id %}'> <button>{{el.mesto}}</button> </a>
+                {%else%}
+                <button>{{el.mesto}}</button> 
+                {%endif%}
+        {%endfor%}
+    </div>
+{%endblock%}
