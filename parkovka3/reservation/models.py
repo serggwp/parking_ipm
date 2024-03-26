@@ -6,7 +6,7 @@ from django.db import models
 class Reserv_mest_parkovki(models.Model):
     mesto = models.CharField('Nazvanie', max_length=50)
     status = models.BooleanField(default=False)
-    user = models.CharField('User', max_length=50, default='', blank=True)
+    user = models.CharField('User', max_length=50, default='')
 
     def __str__(self):
         return self.mesto

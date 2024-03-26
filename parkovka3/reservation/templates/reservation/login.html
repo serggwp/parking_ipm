@@ -6,11 +6,13 @@
 <div class='features'>
     <form method='post'>
         {%csrf_token%}
+        <label>Логин:</label> <br>
         {{ form.user }} <br>
-        <p>Забронировать место? {{ form.status }}</p>
-        <p> Место: {{nomer_mesta.mesto}}
-        <p> <br>
-            <button type='submit'> Подтвердить </button>
+        <p> Место: {{nomer_mesta.mesto}}<p>
+        <p>Забронировать это место? {{ form.status }}</p>
+        <button type='submit' class="btn btn-success"> Подтвердить </button>
+        <a class="btn btn-danger" href = '{%url "reserv" %}' role="button">Отменить</a>
+
     </form>
 
 </div>

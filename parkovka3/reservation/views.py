@@ -1,9 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .models import Reserv_mest_parkovki
-from .forms import Reserv_Form
 from django.views.generic import UpdateView
-from django.urls import reverse
-
 
 # страница брони мест
 def reserv(request):

@@ -3,14 +3,20 @@
 {%block title%} Бронь мест {%endblock%}
 
 {%block content%}
+
     <div class = "features">
-        <h1>Забронировать место: </h1>
-        {%for el in mesta_status%}
+        <h2>Забронировать место: </h2>
+        <a class="btn btn-outline-primary btn-sm" href = '{%url "main_with_map" %}' role="button">Вернуться на главную</a>
+        <div class = 'select_mesto'> 
+            {%for el in mesta_status%}
                 {%if el.status == False%}
-               <a href = '{%url "registr" el.id %}'> <button>{{el.mesto}}</button> </a>
+                    <a class = 'svobodno' href = '{%url "registr" el.id %}' role="button">{{el.mesto}}</a>
                 {%else%}
-                <button>{{el.mesto}}</button> 
+                    <button class = 'zanyato'>{{el.mesto}}</button> 
                 {%endif%}
-        {%endfor%}
+            {%endfor%}
+        </div>
     </div>
+
+
 {%endblock%}

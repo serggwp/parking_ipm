@@ -1,30 +1,27 @@
 {%extends 'main_page/layout.html'%}
 {% load static %}
 
-
 {%block title%} Страница с картой {%endblock%}
 {%block content%}
-<h1>Парковки</h1>
-<h3>Войти/зарегестрироваться</h3>
 
 <!-- карта -->
-<div class='map'>
+<div class='map_div'>
     <a href="#parking_one"><img src="{% static 'main_page/img/marker_icon.png' %}" class="marker_icon"></a>
     <a href="#parking_two"><img src="{% static 'main_page/img/marker_icon.png' %}" class="marker_icon_2"></a>
-    <img src="{% static 'main_page/img/Location.png' %}">
+    <img class = 'stat_map' src="{% static 'main_page/img/Location.png' %}">
 </div>
 
 
 <!-- cписок парковок -->
-<div class='parkings'>
+{% comment %} <div class='parkings'>
     <h2>Список доступных парковок</h2>
     <ul>
         <div class="parking_one">
             <li id='parking_one'>
                 <h3>Первая парковка</h3>
             </li>
-            <p>Свободных мест: </p>
-            <p>Адрес, расположение:<br> Всего свободных мест:</p>
+            <p>Свободных мест: {{ free_space_count }}</p>
+            <p>Адрес, расположение:<br> Всего мест: </p>
             <a>Забронировать место (сделать неактивным, если нет свободных мест)</a>
         </div>
         <div class="parking_two">
@@ -32,10 +29,42 @@
                 <h3>Вторая парковка</h3>
             </li>
             <p>Свободных мест: </p>
-            <p>Адрес, расположение:<br> Всего свободных мест:</p>
+            <p>Адрес, расположение:<br> Всего мест:</p>
             <a href='{%url "reserv"%}'>Забронировать место (сделать неактивным, если нет свободных мест)</a>
         </div>
     </ul>
+</div> {% endcomment %}
+
+<div class = 'parkings'>
+    <div class="card mb-3" id='parking_one'>
+        <div class="card-body">
+          <h5 class="card-title">Первая парковка</h5>
+          <p class="card-text">Адрес:</p>
+          <p class="card-text">Свободных мест</p>
+          <p class="card-text"><small class="text-muted">Всего мест:</small></p>
+          <a href="{%url 'reserv'%}" class="btn btn-primary">Забронировать место (неактивно, если мест нет)</a>
+        </div>
+      </div>
+
+      <div class="card mb-3" id='parking_two'>
+        <div class="card-body">
+          <h5 class="card-title">Вторая парковка</h5>
+          <p class="card-text">Адрес:</p>
+          <p class="card-text">Свободных мест</p>
+          <p class="card-text"><small class="text-muted">Всего мест:</small></p>
+          <a href="{%url 'reserv'%}" class="btn btn-primary">Забронировать место (неактивно, если мест нет)</a>
+        </div>
+      </div>
+
+      <div class="card mb-3" id='parking_three'>
+        <div class="card-body">
+          <h5 class="card-title">Третья парковка</h5>
+          <p class="card-text">Адрес:</p>
+          <p class="card-text">Свободных мест</p>
+          <p class="card-text"><small class="text-muted">Всего мест:</small></p>
+          <a href="{%url 'reserv'%}" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">Забронировать место (неактивно, если мест нет)</a>
+        </div>
+      </div>
 </div>
 
 {%endblock%}
